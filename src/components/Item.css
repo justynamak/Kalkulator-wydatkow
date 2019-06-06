@@ -1,0 +1,19 @@
+li {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0;
+}
+li > h2 {
+  font-size: 1em;
+  flex: 3;
+}
+li > p {
+  flex: 1;
+}
+@media all and (max-width: 1025px) {
+  li > h2 {
+    flex: 1;
+  }
+}
