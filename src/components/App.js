@@ -24,17 +24,30 @@ class App extends Component {
       let idExpense;
       if (this.state.allExpenses.length) {
         const allId = this.state.allExpenses.map(expense => expense.id);
-        console.log(allId);
         idExpense = allId[allId.length - 1] + 1;
       } else {
         idExpense = this.state.allExpenses.length + 1;
       }
-
+      const date = new Date();
+      const day = date.getDate();
+      const month =
+        date.getMonth() + 1 < 10
+          ? `0${date.getMonth() + 1}`
+          : date.getMonth() + 1;
+      const year = date.getFullYear();
+      const hours =
+        date.getHours() < 10 ? `0${date.getHours()}` : date.getHours();
+      const minutes =
+        date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
+      const secs =
+        date.getSeconds() < 10 ? `0${date.getSeconds()}` : date.getSeconds();
+      const currentDate = `${day}.${month}.${year}  ${hours}:${minutes}:${secs}`;
       const expense = {
         id: idExpense,
         title: this.state.title,
         price: this.state.price,
-        category: this.state.category
+        category: this.state.category,
+        currentDate
       };
       const allExpenses = [...this.state.allExpenses, expense];
       this.setState(prevState => ({

@@ -10,6 +10,7 @@ const ListItems = ({ allExpenses, click }) => {
       price={expense.price}
       category={expense.category}
       id={expense.id}
+      currentDate={expense.currentDate}
       click={click}
     />
   ));

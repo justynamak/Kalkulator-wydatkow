@@ -10,7 +10,12 @@ li > h2 {
   flex: 3;
 }
 li > p {
-  flex: 1;
+  flex: 2;
+}
+.date {
+  letter-spacing: 0.0825em;
+  color: #959292;
+  font-size: 0.8em;
 }
 @media all and (max-width: 1025px) {
   li > h2 {
