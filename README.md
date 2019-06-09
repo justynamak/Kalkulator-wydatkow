@@ -5,7 +5,7 @@ Running locally
     Make sure you have Node.js and npm installed.
     Clone or Download the repository
 
-$ git clone https://github.com/Noeemi/React-todo.git
+$ git clone https://github.com/justynamak/Kalkulator-wydatkow-React.git
 $ git cd React-todo
 
     Install dependencies
