@@ -1,4 +1,4 @@
-<h3>Kalkulator wydatków w React</h3>
+<h2>Kalkulator wydatków w React</h2>
 
 Running locally
 
