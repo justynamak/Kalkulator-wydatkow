@@ -1,24 +1,35 @@
-li {
+.item {
   list-style-type: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1em 0;
+  text-align: center;
 }
-li > h2 {
+input {
+  transition: 0.3s all ease-in-out;
+  margin: 0;
+}
+.item__title {
   font-size: 1em;
   flex: 3;
 }
-li > p {
+.item__price,
+.item__category,
+.item__date {
   flex: 2;
 }
-.date {
+.item__date {
   letter-spacing: 0.0825em;
   color: #959292;
   font-size: 0.8em;
 }
+.item--danger {
+  background-color: #ffe1e1;
+  margin-right: 5%;
+}
 @media all and (max-width: 1025px) {
-  li > h2 {
+  .item__title {
     flex: 1;
   }
 }

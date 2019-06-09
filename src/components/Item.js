@@ -1,13 +1,23 @@
 import React from "react";
 import "./Item.css";
 
-const Item = ({ title, price, category, id, currentDate, click }) => {
+const Item = ({ title, price, category, id, currentDate, click, change }) => {
   return (
-    <li data-id={id}>
-      <h2>{title}</h2>
-      <p>{price}zł</p>
-      <p>{category}</p>
-      <p className="date">{currentDate}</p>
+    <li className="item" data-id={id}>
+      <input
+        name="title"
+        className={`item__title ${title === "" ? "item--danger" : null}`}
+        value={title}
+        onChange={change}
+      />
+      <input
+        name="price"
+        className={`item__price ${price === "" ? "item--danger" : null}`}
+        value={price}
+        onChange={change}
+      />
+      <p className="item__category">{category}</p>
+      <p className="item__date">{currentDate}</p>
       <button className="close" title="usuń wydatek" onClick={click}>
         x
       </button>

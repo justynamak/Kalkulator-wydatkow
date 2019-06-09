@@ -18,6 +18,31 @@ class App extends Component {
       [e.target.name]: value
     });
   };
+  handleEditChangeInput = e => {
+    const currentId = parseFloat(e.target.parentElement.dataset.id);
+    const index = this.state.allExpenses.findIndex(
+      expense => expense.id === currentId
+    );
+    const editExpense = [...this.state.allExpenses][index];
+
+    if (e.target.name === "title") {
+      editExpense[e.target.name] = e.target.value;
+    } else {
+      editExpense[e.target.name] = parseFloat(e.target.value) || "";
+    }
+
+    if (e.target.value === "" || parseFloat(e.target.value) < 1) {
+      e.target.classList.add("item--danger");
+    } else {
+      e.target.classList.remove("item--danger");
+    }
+
+    const allExpenses = [...this.state.allExpenses];
+    allExpenses[index] = editExpense;
+    this.setState({
+      allExpenses
+    });
+  };
   handleClickButton = e => {
     e.preventDefault();
     if (this.state.price > 0 && this.state.title) {
@@ -75,6 +100,7 @@ class App extends Component {
       allExpenses
     });
   };
+
   componentDidMount() {
     if (localStorage.getItem("expenses")) {
       const allExpenses = JSON.parse(localStorage.getItem("expenses"));
@@ -90,7 +116,7 @@ class App extends Component {
   }
   render() {
     const theSumOfExpenses = this.state.allExpenses
-      .map(expense => expense.price)
+      .map(expense => expense.price !== "" && expense.price)
       .reduce((prevVal, currentVal) => prevVal + currentVal, 0)
       .toFixed(2);
 
@@ -113,6 +139,7 @@ class App extends Component {
             <ListItems
               allExpenses={this.state.allExpenses}
               click={this.handleClickButtonRemove}
+              change={this.handleEditChangeInput}
             />
           ) : (
             <p>brak wydatków</p>

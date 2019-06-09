@@ -46,6 +46,9 @@ button {
   height: 2em;
   width: 2em;
 }
+.input {
+  font-family: "Montserrat", sans-serif;
+}
 @media all and (max-width: 1025px) {
   .sticky {
     display: flex;
