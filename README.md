@@ -6,7 +6,7 @@ Running locally
     Clone or Download the repository
 
 $ git clone https://github.com/justynamak/Kalkulator-wydatkow-React.git
-$ git cd React-todo
+$ git cd Kalkulator-wydatkow-React-master
 
     Install dependencies
 
