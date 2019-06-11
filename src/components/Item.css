@@ -5,6 +5,8 @@
   align-items: center;
   padding: 1em 0;
   text-align: center;
+  position: relative;
+  transition: 3s all ease-in-out;
 }
 input {
   transition: 0.3s all ease-in-out;
@@ -27,6 +29,15 @@ input {
 .item--danger {
   background-color: #ffe1e1;
   margin-right: 5%;
+}
+.effect-left {
+  left: -200%;
+}
+.effect-center {
+  left: 0;
+}
+.effect-right {
+  right: 200%;
 }
 @media all and (max-width: 1025px) {
   .item__title {

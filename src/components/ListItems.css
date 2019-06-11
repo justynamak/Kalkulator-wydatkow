@@ -1,6 +1,7 @@
 ul {
   width: 70%;
 }
+
 @media all and (max-width: 1025px) {
   ul {
     width: 90%;

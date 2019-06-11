@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Form from "./Form";
 import ListItems from "./ListItems";
+import ButtonRemoveAll from "./ButtonRemoveAll";
 
 class App extends Component {
   state = {
@@ -53,26 +54,14 @@ class App extends Component {
       } else {
         idExpense = this.state.allExpenses.length + 1;
       }
-      const date = new Date();
-      const day = date.getDate();
-      const month =
-        date.getMonth() + 1 < 10
-          ? `0${date.getMonth() + 1}`
-          : date.getMonth() + 1;
-      const year = date.getFullYear();
-      const hours =
-        date.getHours() < 10 ? `0${date.getHours()}` : date.getHours();
-      const minutes =
-        date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
-      const secs =
-        date.getSeconds() < 10 ? `0${date.getSeconds()}` : date.getSeconds();
-      const currentDate = `${day}.${month}.${year}  ${hours}:${minutes}:${secs}`;
+      const date = new Date().toLocaleString();
+
       const expense = {
         id: idExpense,
         title: this.state.title,
         price: this.state.price,
         category: this.state.category,
-        currentDate
+        currentDate: date
       };
       const allExpenses = [...this.state.allExpenses, expense];
       this.setState(prevState => ({
@@ -98,6 +87,12 @@ class App extends Component {
     }
     this.setState({
       allExpenses
+    });
+  };
+  handleClickButtonRemoveAll = () => {
+    this.setState({
+      allExpenses: [],
+      isActivePanel: false
     });
   };
 
@@ -132,7 +127,12 @@ class App extends Component {
             categories={this.state.categories}
             select={this.handleChangeSelect}
           />
-          {<p>Razem: {theSumOfExpenses} zł</p>}
+          <div className="sticky__wrapper">
+            {<p>Razem: {theSumOfExpenses} zł</p>}
+            {this.state.allExpenses.length > 0 && (
+              <ButtonRemoveAll click={this.handleClickButtonRemoveAll} />
+            )}
+          </div>
         </div>
         <div className="panel">
           {this.state.isActivePanel ? (

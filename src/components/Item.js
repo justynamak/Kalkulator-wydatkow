@@ -6,13 +6,13 @@ const Item = ({ title, price, category, id, currentDate, click, change }) => {
     <li className="item" data-id={id}>
       <input
         name="title"
-        className={`item__title ${title === "" ? "item--danger" : null}`}
+        className={`item__title ${title === "" ? "item--danger" : ""}`}
         value={title}
         onChange={change}
       />
       <input
         name="price"
-        className={`item__price ${price === "" ? "item--danger" : null}`}
+        className={`item__price ${price === "" ? "item--danger" : ""}`}
         value={price}
         onChange={change}
       />
