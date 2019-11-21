@@ -1,151 +1,49 @@
 import React, { Component } from "react";
 import "./App.css";
-import Form from "./Form";
-import ListItems from "./ListItems";
-import ButtonRemoveAll from "./ButtonRemoveAll";
+import Calculator from "./Calculator";
+import Navigation from "./Navigation";
+import About from "./About";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
   state = {
-    title: "",
-    price: "",
-    isActivePanel: false,
-    allExpenses: [],
-    category: "Żywność"
+    showNav: false
   };
-  handleChangeInput = e => {
-    const value =
-      e.target.name === "price" ? parseFloat(e.target.value) : e.target.value;
+  handleShowNav = () => {
     this.setState({
-      [e.target.name]: value
+      showNav: true
     });
   };
-  handleEditChangeInput = e => {
-    const currentId = parseFloat(e.target.parentElement.dataset.id);
-    const index = this.state.allExpenses.findIndex(
-      expense => expense.id === currentId
-    );
-    const editExpense = [...this.state.allExpenses][index];
-
-    if (e.target.name === "title") {
-      editExpense[e.target.name] = e.target.value;
-    } else {
-      editExpense[e.target.name] = parseFloat(e.target.value) || "";
-    }
-
-    if (e.target.value === "" || parseFloat(e.target.value) < 1) {
-      e.target.classList.add("item--danger");
-    } else {
-      e.target.classList.remove("item--danger");
-    }
-
-    const allExpenses = [...this.state.allExpenses];
-    allExpenses[index] = editExpense;
+  handleCloseMenu = () => {
     this.setState({
-      allExpenses
+      showNav: false
     });
   };
-  handleClickButton = e => {
-    e.preventDefault();
-    if (this.state.price > 0 && this.state.title) {
-      let idExpense;
-      if (this.state.allExpenses.length) {
-        const allId = this.state.allExpenses.map(expense => expense.id);
-        idExpense = allId[allId.length - 1] + 1;
-      } else {
-        idExpense = this.state.allExpenses.length + 1;
-      }
-      const date = new Date().toLocaleString();
-
-      const expense = {
-        id: idExpense,
-        title: this.state.title,
-        price: this.state.price,
-        category: this.state.category,
-        currentDate: date
-      };
-      const allExpenses = [...this.state.allExpenses, expense];
-      this.setState(prevState => ({
-        allExpenses,
-        title: "",
-        price: "",
-        isActivePanel: true
-      }));
-    }
-  };
-  handleChangeSelect = e => {
-    this.setState({
-      category: e.target.value
-    });
-  };
-  handleClickButtonRemove = e => {
-    const element = parseFloat(e.target.parentElement.dataset.id);
-    const allExpenses = this.state.allExpenses.filter(el => el.id !== element);
-    if (!allExpenses.length) {
-      this.setState({
-        isActivePanel: false
-      });
-    }
-    this.setState({
-      allExpenses
-    });
-  };
-  handleClickButtonRemoveAll = () => {
-    this.setState({
-      allExpenses: [],
-      isActivePanel: false
-    });
-  };
-
-  componentDidMount() {
-    if (localStorage.getItem("expenses")) {
-      const allExpenses = JSON.parse(localStorage.getItem("expenses"));
-      this.setState({
-        allExpenses,
-        isActivePanel: true
-      });
-    }
-  }
-  componentDidUpdate() {
-    const allExpenses = JSON.stringify(this.state.allExpenses);
-    localStorage.setItem("expenses", allExpenses);
-  }
   render() {
-    const theSumOfExpenses = this.state.allExpenses
-      .map(expense => expense.price !== "" && expense.price)
-      .reduce((prevVal, currentVal) => prevVal + currentVal, 0)
-      .toFixed(2);
-
+    const toggleNav = this.state.showNav ? "showNav" : "hideNav";
+    const classNamesApp = ["app", toggleNav];
+    const classNamesHamburger = [
+      "hamburger",
+      `${this.state.showNav ? "hide" : null}`
+    ];
     return (
-      <>
-        <div className="sticky">
-          <h1>Kalkulator wydatków</h1>
-          <Form
-            change={this.handleChangeInput}
-            title={this.state.title}
-            price={this.state.price}
-            click={this.handleClickButton}
-            categories={this.state.categories}
-            select={this.handleChangeSelect}
-          />
-          <div className="sticky__wrapper">
-            {<p>Razem: {theSumOfExpenses} zł</p>}
-            {this.state.allExpenses.length > 0 && (
-              <ButtonRemoveAll click={this.handleClickButtonRemoveAll} />
-            )}
+      <Router>
+        <div
+          className={classNamesHamburger.join(" ")}
+          onClick={this.handleShowNav}
+        >
+          <i className="fas fa-bars"></i>
+        </div>
+        <div className={classNamesApp.join(" ")}>
+          <Navigation />
+          <div className="content" onClick={this.handleCloseMenu}>
+            <Switch>
+              <Route path="/" component={Calculator} exact />
+              <Route path="/about" component={About} />
+            </Switch>
           </div>
         </div>
-        <div className="panel">
-          {this.state.isActivePanel ? (
-            <ListItems
-              allExpenses={this.state.allExpenses}
-              click={this.handleClickButtonRemove}
-              change={this.handleEditChangeInput}
-            />
-          ) : (
-            <p>brak wydatków</p>
-          )}
-        </div>
-      </>
+      </Router>
     );
   }
 }
