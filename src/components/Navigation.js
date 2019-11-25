@@ -13,7 +13,10 @@ const Navigation = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/" activeClassName="activeItemNav" exact>
+          <NavLink
+            to="/Kalkulator-wydatkow-React/"
+            activeClassName="activeItemNav"
+          >
             Kalkulator wydatków
           </NavLink>
         </li>

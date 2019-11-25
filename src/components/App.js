@@ -38,7 +38,10 @@ class App extends Component {
           <Navigation />
           <div className="content" onClick={this.handleCloseMenu}>
             <Switch>
-              <Route path="/" component={Calculator} exact />
+              <Route
+                path="/Kalkulator-wydatkow-React/"
+                component={Calculator}
+              />
               <Route path="/about" component={About} />
             </Switch>
           </div>
