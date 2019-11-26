@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "99aebfb6b1e6aed2702b73ba810bd687",
+    "revision": "7165e91e370992b363504dfc1fac049e",
     "url": "/Kalkulator-wydatkow-React/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Kalkulator-wydatkow-React/static/css/2.391da5e4.chunk.css"
   },
   {
-    "revision": "628b1c50aaf3f95181eb",
+    "revision": "7691fbead854c40b0805",
     "url": "/Kalkulator-wydatkow-React/static/css/main.87ac3458.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Kalkulator-wydatkow-React/static/js/2.ce62bba3.chunk.js"
   },
   {
-    "revision": "628b1c50aaf3f95181eb",
-    "url": "/Kalkulator-wydatkow-React/static/js/main.f92f5db2.chunk.js"
+    "revision": "7691fbead854c40b0805",
+    "url": "/Kalkulator-wydatkow-React/static/js/main.1c735f04.chunk.js"
   },
   {
     "revision": "ad2ca9c16b22e85ae5c8",
