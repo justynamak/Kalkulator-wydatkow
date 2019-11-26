@@ -18,6 +18,7 @@ const Navigation = ({ colorTheme }) => {
         </li>
         <li>
           <NavLink
+            exact
             to="/Kalkulator-wydatkow-React/"
             activeClassName="activeItemNav"
             activeStyle={{ color: `${colorTheme}` }}
