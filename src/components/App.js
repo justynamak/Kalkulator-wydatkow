@@ -63,7 +63,6 @@ class App extends Component {
     }
   }
   render() {
-    console.log(this.state.colorTheme);
     const toggleNav = this.state.showNav ? "showNav" : "hideNav";
     const classNamesApp = ["app", toggleNav];
     const lightenColor = this.lightenColor(this.state.colorTheme, 65);
@@ -95,9 +94,12 @@ class App extends Component {
                 path="/Kalkulator-wydatkow-React/"
                 render={() => <Calculator colorTheme={this.state.colorTheme} />}
               />
-              <Route path="/about" component={About} />
               <Route
-                path="/ustawienia"
+                path="/Kalkulator-wydatkow-React/o-mnie"
+                component={About}
+              />
+              <Route
+                path="/Kalkulator-wydatkow-React/ustawienia"
                 render={() => (
                   <Setup
                     colorTheme={this.state.colorTheme}
