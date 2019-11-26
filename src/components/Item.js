@@ -1,7 +1,16 @@
 import React from "react";
 import "./Item.css";
 
-const Item = ({ title, price, category, id, currentDate, click, change }) => {
+const Item = ({
+  title,
+  price,
+  category,
+  id,
+  currentDate,
+  click,
+  change,
+  color
+}) => {
   return (
     <li className="item" data-id={id}>
       <input
@@ -18,7 +27,12 @@ const Item = ({ title, price, category, id, currentDate, click, change }) => {
       />
       <p className="item__category">{category}</p>
       <p className="item__date">{currentDate}</p>
-      <button className="close" title="usuń wydatek" onClick={click}>
+      <button
+        className="close"
+        title="usuń wydatek"
+        onClick={click}
+        style={{ borderColor: `${color}`, color: `${color}` }}
+      >
         x
       </button>
     </li>

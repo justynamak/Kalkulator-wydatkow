@@ -116,13 +116,7 @@ class Calculator extends Component {
       .toFixed(2);
 
     const { colorTheme } = this.props;
-    console.log(this.props);
-    const stylesConfig = {
-      border: `2px solid ${colorTheme}`,
-      color: `${colorTheme}`,
-      background: `${colorTheme}`
-    };
-    const { border, color, background } = stylesConfig;
+
     return (
       <>
         <div className="sticky">
@@ -134,14 +128,14 @@ class Calculator extends Component {
             click={this.handleClickButton}
             categories={this.state.categories}
             select={this.handleChangeSelect}
-            config={background}
+            background={colorTheme}
           />
           <div className="sticky__wrapper">
             {<p>Razem: {theSumOfExpenses} zł</p>}
             {this.state.allExpenses.length > 0 && (
               <ButtonRemoveAll
                 click={this.handleClickButtonRemoveAll}
-                config={(border, color)}
+                color={colorTheme}
               />
             )}
           </div>
@@ -152,7 +146,7 @@ class Calculator extends Component {
               allExpenses={this.state.allExpenses}
               click={this.handleClickButtonRemove}
               change={this.handleEditChangeInput}
-              config={(border, color)}
+              color={colorTheme}
             />
           ) : (
             <p>brak wydatków</p>
