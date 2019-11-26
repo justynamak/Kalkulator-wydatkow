@@ -14,6 +14,7 @@ input {
 .app {
   display: flex;
   transition: 0.4s transform ease-in-out;
+  position: relative;
 }
 .container {
   position: fixed;
@@ -109,5 +110,34 @@ button {
   }
   .sticky__wrapper > * {
     flex: 1;
+  }
+  .hideNav {
+    transform: none;
+  }
+  .hideNav nav {
+    transform: translateX(-100%);
+    width: 100%;
+  }
+  .showNav {
+    transform: none;
+  }
+  .showNav nav {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 10;
+  }
+  .content {
+    width: 100%;
+    padding: 2% 3%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .app {
+    display: block;
+    width: 100%;
   }
 }

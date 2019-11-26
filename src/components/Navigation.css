@@ -7,12 +7,7 @@
   margin: 0;
   background: #ececec;
   width: auto;
-  min-width: 300px;
   height: 100vh;
-  /* position: fixed;
-  top: 0;
-  left: 0; */
-
   z-index: 1000;
 }
 
@@ -34,4 +29,8 @@
 .activeItemNav {
   font-weight: bold;
   background: lightgray;
+}
+@media all and (max-width: 1025px) {
+  .nav {
+  }
 }
