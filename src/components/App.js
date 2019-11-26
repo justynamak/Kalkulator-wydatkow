@@ -1,46 +1,45 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Calculator from "./Calculator";
 import Navigation from "./Navigation";
 import About from "./About";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Setup from "./Setup";
 
 class App extends Component {
   state = {
     showNav: false
   };
-  handleShowNav = () => {
+  handleToggleNav = () => {
     this.setState({
-      showNav: true
+      showNav: !this.state.showNav
     });
   };
   handleCloseMenu = () => {
     this.setState({
-      showNav: false
+      showNav: false,
+      colorTheme: "#2bbbad"
     });
   };
   render() {
     const toggleNav = this.state.showNav ? "showNav" : "hideNav";
     const classNamesApp = ["app", toggleNav];
-    const classNamesHamburger = [
-      "hamburger",
-      `${this.state.showNav ? "hide" : null}`
-    ];
+
+    const fontawesomeClass = this.state.showNav
+      ? "fas fa-arrow-left"
+      : "fas fa-bars";
     return (
       <Router>
-        <div
-          className={classNamesHamburger.join(" ")}
-          onClick={this.handleShowNav}
-        >
-          <i className="fas fa-bars"></i>
+        <div className="hamburger" onClick={this.handleToggleNav}>
+          <i className={fontawesomeClass}></i>
         </div>
         <div className={classNamesApp.join(" ")}>
           <Navigation />
-          <div className="content" onClick={this.handleCloseMenu}>
+          <div className="content">
             <Switch>
               <Route
                 path="/Kalkulator-wydatkow-React/"
-                component={Calculator}
+                render={() => <Calculator colorTheme={this.state.colorTheme} />}
               />
               <Route path="/about" component={About} />
             </Switch>

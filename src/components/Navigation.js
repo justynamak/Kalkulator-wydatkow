@@ -8,7 +8,7 @@ const Navigation = () => {
     <nav className="nav">
       <ul className="nav__list">
         <li>
-          <NavLink to="/about" activeClassName="activeItemNav">
+          <NavLink to="/o-mnie" activeClassName="activeItemNav">
             O aplikacji
           </NavLink>
         </li>
@@ -26,7 +26,7 @@ const Navigation = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/setup" activeClassName="activeItemNav">
+          <NavLink to="/ustawienia" activeClassName="activeItemNav">
             Ustawienia
           </NavLink>
         </li>

@@ -1,7 +1,8 @@
 import React from "react";
 import "./Form.css";
 
-const Form = ({ change, title, price, click, categories, select }) => {
+const Form = ({ change, title, price, click, categories, select, config }) => {
+  console.log(config);
   return (
     <form action="" className="form">
       <div className="form__field">
@@ -39,7 +40,12 @@ const Form = ({ change, title, price, click, categories, select }) => {
           <option value="Inna">Inna</option>
         </select>
       </div>
-      <button onClick={click} className="form__button" title="dodaj wydatek">
+      <button
+        onClick={click}
+        className="form__button"
+        title="dodaj wydatek"
+        style={{ backgroundColor: `${config.background}` }}
+      >
         +
       </button>
     </form>
