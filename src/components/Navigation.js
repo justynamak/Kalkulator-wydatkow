@@ -9,7 +9,7 @@ const Navigation = ({ colorTheme }) => {
       <ul className="nav__list">
         <li>
           <NavLink
-            to="/Kalkulator-wydatkow-React/o-mnie"
+            to="/Kalkulator-wydatkow-React/o-aplikacji"
             activeClassName="activeItemNav"
             activeStyle={{ color: `${colorTheme}` }}
           >
@@ -46,7 +46,7 @@ const Navigation = ({ colorTheme }) => {
         </li>
         <li>
           <NavLink
-            to="/Kalkulator-wydatkow-React/kontact"
+            to="/Kalkulator-wydatkow-React/kontakt"
             activeClassName="activeItemNav"
             activeStyle={{ color: `${colorTheme}` }}
           >

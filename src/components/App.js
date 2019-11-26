@@ -91,11 +91,12 @@ class App extends Component {
           >
             <Switch>
               <Route
+                exact
                 path="/Kalkulator-wydatkow-React/"
                 render={() => <Calculator colorTheme={this.state.colorTheme} />}
               />
               <Route
-                path="/Kalkulator-wydatkow-React/o-mnie"
+                path="/Kalkulator-wydatkow-React/o-aplikacji"
                 component={About}
               />
               <Route
