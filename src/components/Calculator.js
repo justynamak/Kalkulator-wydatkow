@@ -12,6 +12,7 @@ class Calculator extends Component {
     allExpenses: [],
     category: "Żywność"
   };
+
   handleChangeInput = e => {
     const value =
       e.target.name === "price" ? parseFloat(e.target.value) : e.target.value;
@@ -115,7 +116,7 @@ class Calculator extends Component {
       .reduce((prevVal, currentVal) => prevVal + currentVal, 0)
       .toFixed(2);
 
-    const { colorTheme } = this.props;
+    const { colorTheme, lightenColor } = this.props;
 
     return (
       <>
@@ -131,7 +132,16 @@ class Calculator extends Component {
             background={colorTheme}
           />
           <div className="sticky__wrapper">
-            {<p>Razem: {theSumOfExpenses} zł</p>}
+            {
+              <p
+                style={{
+                  color: `${colorTheme}`,
+                  fontWeight: "bold"
+                }}
+              >
+                Razem: {theSumOfExpenses} zł
+              </p>
+            }
             {this.state.allExpenses.length > 0 && (
               <ButtonRemoveAll
                 click={this.handleClickButtonRemoveAll}
@@ -141,6 +151,17 @@ class Calculator extends Component {
           </div>
         </div>
         <div className="panel">
+          <div
+            className="panel-labels"
+            style={{ backgroundColor: lightenColor }}
+          >
+            <p>Nazwa</p>
+            <p>Cena</p>
+            <p>Kategoria</p>
+            <p>Data dodania</p>
+            <div></div>
+          </div>
+
           {this.state.isActivePanel ? (
             <ListItems
               allExpenses={this.state.allExpenses}

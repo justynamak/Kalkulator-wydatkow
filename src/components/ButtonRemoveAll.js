@@ -6,9 +6,10 @@ const ButtonRemoveAll = ({ click, color }) => {
     <button
       className="btn-remove"
       onClick={click}
-      style={{ color: `${color}`, borderColor: ` ${color}` }}
+      style={{ color: `${color}` }}
+      title="Usuń wszystkie"
     >
-      Usuń wszystkie
+      <i class="fas fa-trash"></i>
     </button>
   );
 };

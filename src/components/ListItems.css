@@ -1,10 +1,40 @@
-ul {
+/* ul {
   width: 70%;
+} */
+.list-items {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0;
+  flex-direction: column;
+}
+.list-items li {
+  width: 100%;
+}
+.panel-labels {
+  width: 100%;
+  font-weight: bold;
+  display: flex;
+  text-align: center;
+}
+.panel-labels p {
+  flex: 1;
+  text-align: center;
+}
+
+.panel-labels div:nth-child(5) {
+  width: calc(2.5em + 4px);
 }
 
 @media all and (max-width: 1025px) {
   ul {
     width: 100%;
     padding: 0;
+  }
+}
+@media all and (max-width: 770px) {
+  .panel-labels {
+    display: none;
   }
 }

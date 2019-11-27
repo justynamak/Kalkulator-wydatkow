@@ -20,8 +20,8 @@ input:focus {
 }
 .form__button {
   font-size: 1.2em;
-  background: #2bbbad;
   color: #fff;
+  border-radius: 3px;
 }
 .form__field select {
   padding: 3% 4%;

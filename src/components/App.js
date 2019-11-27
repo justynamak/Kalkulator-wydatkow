@@ -81,13 +81,19 @@ class App extends Component {
           <Navigation
             colorTheme={this.state.colorTheme}
             lightenColor={lightenColor}
+            click={this.handleCloseMenu}
           />
           <div className="content">
             <Switch>
               <Route
                 exact
                 path="/Kalkulator-wydatkow-React/"
-                render={() => <Calculator colorTheme={this.state.colorTheme} />}
+                render={() => (
+                  <Calculator
+                    colorTheme={this.state.colorTheme}
+                    lightenColor={lightenColor}
+                  />
+                )}
               />
               <Route
                 path="/Kalkulator-wydatkow-React/o-aplikacji"

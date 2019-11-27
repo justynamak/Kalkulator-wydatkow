@@ -3,7 +3,12 @@ import { NavLink } from "react-router-dom";
 import "./Navigation.css";
 import "../../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 
-const Navigation = ({ colorTheme, lightenColor }) => {
+const Navigation = ({ colorTheme, lightenColor, click }) => {
+  function handleClickItemMobile() {
+    if (window.innerWidth < 1025) {
+      click();
+    }
+  }
   return (
     <nav className="nav">
       <ul
@@ -17,6 +22,7 @@ const Navigation = ({ colorTheme, lightenColor }) => {
             to="/Kalkulator-wydatkow-React/o-aplikacji"
             activeClassName="activeItemNav"
             activeStyle={{ backgroundColor: `${lightenColor}` }}
+            onClick={handleClickItemMobile}
           >
             O aplikacji
           </NavLink>
@@ -27,6 +33,7 @@ const Navigation = ({ colorTheme, lightenColor }) => {
             to="/Kalkulator-wydatkow-React/"
             activeClassName="activeItemNav"
             activeStyle={{ backgroundColor: `${lightenColor}` }}
+            onClick={handleClickItemMobile}
           >
             Kalkulator wydatków
           </NavLink>
@@ -37,6 +44,7 @@ const Navigation = ({ colorTheme, lightenColor }) => {
             activeClassName="activeItemNav"
             activeStyle={{ color: `${colorTheme}` }}
             activeStyle={{ backgroundColor: `${lightenColor}` }}
+            onClick={handleClickItemMobile}
           >
             Oceń aplikację
           </NavLink>
@@ -47,6 +55,7 @@ const Navigation = ({ colorTheme, lightenColor }) => {
             activeClassName="activeItemNav"
             activeStyle={{ color: `${colorTheme}` }}
             activeStyle={{ backgroundColor: `${lightenColor}` }}
+            onClick={handleClickItemMobile}
           >
             Ustawienia
           </NavLink>
@@ -57,6 +66,7 @@ const Navigation = ({ colorTheme, lightenColor }) => {
             activeClassName="activeItemNav"
             activeStyle={{ color: `${colorTheme}` }}
             activeStyle={{ backgroundColor: `${lightenColor}` }}
+            onClick={handleClickItemMobile}
           >
             Kontakt
           </NavLink>

@@ -16,7 +16,7 @@ const ListItems = ({ allExpenses, click, change, color }) => {
       color={color}
     />
   ));
-  return <ul>{expenses}</ul>;
+  return <ul className="list-items">{expenses}</ul>;
 };
 
 export default ListItems;
