@@ -1,0 +1,20 @@
+.about-wrapper {
+  display: flex;
+  margin-top: 2rem;
+  align-items: center;
+}
+.about-wrapper .fas {
+  color: lightgray;
+  border: 3px solid lightgray;
+  border-radius: 20px;
+  padding: 30px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-wrapper p {
+  margin-left: 2rem;
+  max-width: 50%;
+}

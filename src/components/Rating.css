@@ -1,0 +1,33 @@
+.rating-wrapper {
+  display: flex;
+  margin-top: 2rem;
+}
+.rating-wrapper .far {
+  padding-right: 2rem;
+  color: lightgray;
+  cursor: pointer;
+}
+.rating-button {
+  margin-top: 2rem;
+  border: none;
+  width: 120px;
+  height: 52px;
+}
+.rating-msg {
+  padding-top: 1rem;
+}
+@media all and (max-width: 770px) {
+  .rating-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .rating-wrapper .far {
+    padding: 1rem 0;
+  }
+  .rating-button {
+    margin: 2rem auto;
+  }
+  .rating-msg {
+    text-align: center;
+  }
+}

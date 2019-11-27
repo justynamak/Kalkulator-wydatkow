@@ -149,3 +149,9 @@ button {
     width: 100%;
   }
 }
+@media all and (max-width: 770px) {
+  h1,
+  h2 {
+    text-align: center;
+  }
+}

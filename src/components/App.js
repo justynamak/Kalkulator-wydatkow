@@ -5,6 +5,7 @@ import Calculator from "./Calculator";
 import Navigation from "./Navigation";
 import About from "./About";
 import Setup from "./Setup";
+import Rating from "./Rating";
 
 class App extends Component {
   state = {
@@ -107,6 +108,10 @@ class App extends Component {
                     change={this.handleChangeColorTheme}
                   />
                 )}
+              />
+              <Route
+                path="/Kalkulator-wydatkow-React/ocena"
+                render={() => <Rating colorTheme={this.state.colorTheme} />}
               />
             </Switch>
           </div>

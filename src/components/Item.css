@@ -57,17 +57,17 @@ input {
     text-align: left;
     font-size: 1rem;
     display: block;
+    padding: 0;
   }
   .item__date {
     order: -1;
   }
   .item__label {
     display: inline-block;
-    padding-right: 2rem;
     float: left;
     width: 50%;
     margin: 0;
-    line-height: 1.5;
+    line-height: 2;
   }
   .item__label p {
     float: right;
@@ -79,7 +79,7 @@ input {
     float: right;
     width: 50%;
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 2;
   }
   .close {
     display: inline-block;
