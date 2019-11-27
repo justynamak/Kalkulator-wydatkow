@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5ea1ed32d2e13ffc414e041dbb5462f9",
+    "revision": "4387c1bf87b2f0173a15414d620d604f",
     "url": "/Kalkulator-wydatkow-React/index.html"
   },
   {
