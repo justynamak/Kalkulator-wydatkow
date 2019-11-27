@@ -11,26 +11,27 @@ class App extends Component {
     showNav: false,
     colorTheme: "#2bbbad"
   };
+  lightenDarkenColor(col, amt) {
+    var usePound = false;
+    if (col[0] == "#") {
+      col = col.slice(1);
+      usePound = true;
+    }
+    const num = parseInt(col, 16);
+    let r = (num >> 16) + amt;
+    if (r > 255) r = 255;
+    else if (r < 0) r = 0;
+    let b = ((num >> 8) & 0x00ff) + amt;
 
-  lightenColor(color, percent) {
-    var num = parseInt(color.replace("#", ""), 16),
-      amt = Math.round(2.55 * percent),
-      R = (num >> 16) + amt,
-      B = ((num >> 8) & 0x00ff) + amt,
-      G = (num & 0x0000ff) + amt;
-    return (
-      "#" +
-      (
-        0x1000000 +
-        (R < 255 ? (R < 1 ? 0 : R) : 255) * 0x10000 +
-        (B < 255 ? (B < 1 ? 0 : B) : 255) * 0x100 +
-        (G < 255 ? (G < 1 ? 0 : G) : 255)
-      )
-        .toString(16)
-        .slice(1)
-    );
+    if (b > 255) b = 255;
+    else if (b < 0) b = 0;
+
+    let g = (num & 0x0000ff) + amt;
+    if (g > 255) g = 255;
+    else if (g < 0) g = 0;
+
+    return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16);
   }
-
   saveThemeToStorage = color => {
     // const colorTheme = JSON.stringify(this.state.colorTheme);
     localStorage.setItem("colorTheme", color);
@@ -65,30 +66,23 @@ class App extends Component {
   render() {
     const toggleNav = this.state.showNav ? "showNav" : "hideNav";
     const classNamesApp = ["app", toggleNav];
-    const lightenColor = this.lightenColor(this.state.colorTheme, 65);
+    const lightenColor = this.lightenDarkenColor(this.state.colorTheme, 45);
 
     const fontawesomeClass = this.state.showNav
       ? "fas fa-arrow-left"
       : "fas fa-bars";
     return (
       <Router>
-        <div
-          className="container"
-          style={{
-            backgroundColor: `${lightenColor}`
-          }}
-        ></div>
+        <div className="container"></div>
         <div className="hamburger" onClick={this.handleToggleNav}>
           <i className={fontawesomeClass}></i>
         </div>
         <div className={classNamesApp.join(" ")}>
-          <Navigation colorTheme={this.state.colorTheme} />
-          <div
-            className="content"
-            style={{
-              backgroundColor: `${lightenColor}`
-            }}
-          >
+          <Navigation
+            colorTheme={this.state.colorTheme}
+            lightenColor={lightenColor}
+          />
+          <div className="content">
             <Switch>
               <Route
                 exact

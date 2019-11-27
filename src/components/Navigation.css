@@ -9,6 +9,8 @@
   width: auto;
   height: 100vh;
   z-index: 1000;
+  box-shadow: 1px 1px 10px lightgrey;
+  padding-top: calc(60px + 2%);
 }
 
 .nav ul li {
@@ -29,8 +31,7 @@
 .activeItemNav {
   font-weight: bold;
   background: lightgray;
+  color: black;
 }
 @media all and (max-width: 1025px) {
-  .nav {
-  }
 }

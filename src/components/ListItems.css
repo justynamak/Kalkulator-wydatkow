@@ -4,6 +4,7 @@ ul {
 
 @media all and (max-width: 1025px) {
   ul {
-    width: 90%;
+    width: 100%;
+    padding: 0;
   }
 }
