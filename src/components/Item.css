@@ -47,7 +47,6 @@ input {
   .item {
     flex-direction: column;
     align-items: flex-start;
-    font-size: 1.4rem;
     margin-bottom: 1rem;
     display: inline-block;
     text-align: left;
@@ -56,7 +55,7 @@ input {
   }
   .item input {
     text-align: left;
-    font-size: 1.4rem;
+    font-size: 1rem;
     display: block;
   }
   .item__date {
@@ -79,7 +78,7 @@ input {
   .item__title {
     float: right;
     width: 50%;
-    font-size: 1.4rem;
+    font-size: 1rem;
     line-height: 1.5;
   }
   .close {
