@@ -9,7 +9,7 @@ import Setup from "./Setup";
 class App extends Component {
   state = {
     showNav: false,
-    colorTheme: "#2bbbad"
+    colorTheme: "#6602b7"
   };
   lightenDarkenColor(col, amt) {
     var usePound = false;
