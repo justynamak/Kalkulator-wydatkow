@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Kalkulator-wydatkow-React/static/css/main.cfbd3e13.chunk.css",
+    "main.css": "/Kalkulator-wydatkow-React/static/css/main.8913b5f6.chunk.css",
     "main.js": "/Kalkulator-wydatkow-React/static/js/main.c417ca4c.chunk.js",
     "main.js.map": "/Kalkulator-wydatkow-React/static/js/main.c417ca4c.chunk.js.map",
     "runtime~main.js": "/Kalkulator-wydatkow-React/static/js/runtime~main.4b5cb6d2.js",
@@ -9,10 +9,10 @@
     "static/js/2.10d993f1.chunk.js": "/Kalkulator-wydatkow-React/static/js/2.10d993f1.chunk.js",
     "static/js/2.10d993f1.chunk.js.map": "/Kalkulator-wydatkow-React/static/js/2.10d993f1.chunk.js.map",
     "index.html": "/Kalkulator-wydatkow-React/index.html",
-    "precache-manifest.35d6ee795aec86ba16957bbd64b52815.js": "/Kalkulator-wydatkow-React/precache-manifest.35d6ee795aec86ba16957bbd64b52815.js",
+    "precache-manifest.d6f3b7bb2143220385b973e17f21c188.js": "/Kalkulator-wydatkow-React/precache-manifest.d6f3b7bb2143220385b973e17f21c188.js",
     "service-worker.js": "/Kalkulator-wydatkow-React/service-worker.js",
     "static/css/2.391da5e4.chunk.css.map": "/Kalkulator-wydatkow-React/static/css/2.391da5e4.chunk.css.map",
-    "static/css/main.cfbd3e13.chunk.css.map": "/Kalkulator-wydatkow-React/static/css/main.cfbd3e13.chunk.css.map",
+    "static/css/main.8913b5f6.chunk.css.map": "/Kalkulator-wydatkow-React/static/css/main.8913b5f6.chunk.css.map",
     "static/media/all.min.css": "/Kalkulator-wydatkow-React/static/media/fa-solid-900.c2801fb4.svg"
   }
 }
