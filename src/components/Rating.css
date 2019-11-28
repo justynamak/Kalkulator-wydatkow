@@ -12,6 +12,8 @@
   border: none;
   width: 120px;
   height: 52px;
+  color: white;
+  text-transform: uppercase;
 }
 .rating-msg {
   padding-top: 1rem;
@@ -20,6 +22,7 @@
   .rating-wrapper {
     flex-direction: column;
     align-items: center;
+    max-height: 100vh;
   }
   .rating-wrapper .far {
     padding: 1rem 0;

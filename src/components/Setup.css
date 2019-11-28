@@ -1,0 +1,32 @@
+.colors-wrapper {
+  margin-top: 2rem;
+  display: flex;
+}
+
+.color {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* color: white; */
+}
+.color-brown {
+  background: #ab8f8f;
+  color: #ab8f8f;
+}
+.color-blue {
+  background: #008080;
+  color: #008080;
+}
+.color-violet {
+  background: #8b17ff;
+  color: #8b17ff;
+}
+.color-pink {
+  background: #ae0057;
+  color: #ae0057;
+}

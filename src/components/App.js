@@ -48,7 +48,8 @@ class App extends Component {
     });
   };
   handleChangeColorTheme = e => {
-    const color = e.target.value;
+    const color = e.currentTarget.dataset.name;
+
     this.setState({
       colorTheme: color
     });
