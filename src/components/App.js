@@ -18,7 +18,8 @@ class App extends Component {
       "Kredyt",
       "Inna"
     ],
-    newCategory: ""
+    newCategory: "",
+    errMsg: ""
   };
   lightenDarkenColor(col, amt) {
     var usePound = false;
@@ -63,12 +64,19 @@ class App extends Component {
     this.saveThemeToStorage(color);
   };
   handleRemoveFromCategories = elem => {
-    const allCategories = this.state.allCategories.filter(
-      item => item !== elem
-    );
-    this.setState({
-      allCategories
-    });
+    if (this.state.allCategories.length > 2) {
+      const allCategories = this.state.allCategories.filter(
+        item => item !== elem
+      );
+      this.setState({
+        allCategories
+      });
+    } else {
+      this.setState({
+        errMsgCategories:
+          "Przynajmniej dwie kategorie muszą pozostać wprowadzone "
+      });
+    }
   };
   handleAddToCategories = () => {
     if (this.state.newCategory.length > 0) {
@@ -77,7 +85,8 @@ class App extends Component {
 
       this.setState({
         allCategories,
-        newCategory: ""
+        newCategory: "",
+        errMsgCategories: ""
       });
     }
   };
@@ -146,6 +155,7 @@ class App extends Component {
                     newCategory={this.state.newCategory}
                     change={this.handleChangeInput}
                     add={this.handleAddToCategories}
+                    errMsgCategories={this.state.errMsgCategories}
                   />
                 )}
               />

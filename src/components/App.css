@@ -66,7 +66,7 @@ input {
   flex-direction: row;
 }
 .sticky input {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 .sticky__wrapper p {
   font-size: 1.4rem;
@@ -101,7 +101,7 @@ button {
   margin-top: 2rem;
   border: none;
   width: 120px;
-  height: 52px;
+  height: 40px;
   color: white;
   text-transform: uppercase;
 }

@@ -8,7 +8,8 @@ const Setup = ({
   remove,
   change,
   newCategory,
-  add
+  add,
+  errMsgCategories
 }) => {
   const categories = allCategories.map(category => (
     <li key={category} onClick={() => remove(category)}>
@@ -84,6 +85,7 @@ const Setup = ({
           </button>
         </div>
         <ul className="categories-setup">{categories}</ul>
+        <p>{errMsgCategories}</p>
       </section>
     </>
   );
