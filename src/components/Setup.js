@@ -9,8 +9,17 @@ const Setup = ({ colorTheme, change }) => {
       <form>
         <label>
           Wybierz kolor motywu
-          {/* <input type="color" value={colorTheme} onChange={change} /> */}
           <div className="colors-wrapper">
+            <div
+              className="color color-violet"
+              data-name="#8b17ff"
+              onClick={change}
+              style={colorTheme === "#8b17ff" ? { color: "#fff" } : null}
+            >
+              <span>
+                <i className="fas fa-check"></i>
+              </span>
+            </div>
             <div
               className="color color-brown"
               data-name="#ab8f8f"
@@ -31,16 +40,7 @@ const Setup = ({ colorTheme, change }) => {
                 <i className="fas fa-check"></i>
               </span>
             </div>
-            <div
-              className="color color-violet"
-              data-name="#8b17ff"
-              onClick={change}
-              style={colorTheme === "#8b17ff" ? { color: "#fff" } : null}
-            >
-              <span>
-                <i className="fas fa-check"></i>
-              </span>
-            </div>
+
             <div
               className="color color-pink"
               data-name="#ae0057"

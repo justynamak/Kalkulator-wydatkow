@@ -10,7 +10,7 @@ import Rating from "./Rating";
 class App extends Component {
   state = {
     showNav: false,
-    colorTheme: "#6602b7"
+    colorTheme: "#8b17ff"
   };
   lightenDarkenColor(col, amt) {
     var usePound = false;
