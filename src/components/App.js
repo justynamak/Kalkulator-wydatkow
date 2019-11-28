@@ -10,7 +10,15 @@ import Rating from "./Rating";
 class App extends Component {
   state = {
     showNav: false,
-    colorTheme: "#8b17ff"
+    colorTheme: "#8b17ff",
+    allCategories: [
+      "Żywność",
+      "Opłaty",
+      "Jedzenie na mieście",
+      "Kredyt",
+      "Inna"
+    ],
+    newCategory: ""
   };
   lightenDarkenColor(col, amt) {
     var usePound = false;
@@ -34,7 +42,6 @@ class App extends Component {
     return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16);
   }
   saveThemeToStorage = color => {
-    // const colorTheme = JSON.stringify(this.state.colorTheme);
     localStorage.setItem("colorTheme", color);
   };
   handleToggleNav = () => {
@@ -54,6 +61,32 @@ class App extends Component {
       colorTheme: color
     });
     this.saveThemeToStorage(color);
+  };
+  handleRemoveFromCategories = elem => {
+    const allCategories = this.state.allCategories.filter(
+      item => item !== elem
+    );
+    this.setState({
+      allCategories
+    });
+  };
+  handleAddToCategories = () => {
+    if (this.state.newCategory.length > 0) {
+      const allCategories = [...this.state.allCategories];
+      allCategories.push(this.state.newCategory);
+
+      this.setState({
+        allCategories,
+        newCategory: ""
+      });
+    }
+  };
+  handleChangeInput = e => {
+    const newCategory = e.target.value;
+
+    this.setState({
+      newCategory
+    });
   };
 
   componentDidMount() {
@@ -94,6 +127,7 @@ class App extends Component {
                   <Calculator
                     colorTheme={this.state.colorTheme}
                     lightenColor={lightenColor}
+                    allCategories={this.state.allCategories}
                   />
                 )}
               />
@@ -106,7 +140,12 @@ class App extends Component {
                 render={() => (
                   <Setup
                     colorTheme={this.state.colorTheme}
-                    change={this.handleChangeColorTheme}
+                    click={this.handleChangeColorTheme}
+                    allCategories={this.state.allCategories}
+                    remove={this.handleRemoveFromCategories}
+                    newCategory={this.state.newCategory}
+                    change={this.handleChangeInput}
+                    add={this.handleAddToCategories}
                   />
                 )}
               />

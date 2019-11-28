@@ -57,7 +57,7 @@ class Rating extends Component {
           ></i>
         </div>
         <button
-          className="rating-button"
+          className="btn"
           style={{ backgroundColor: `${colorTheme}` }}
           onClick={this.handleClickButton}
         >

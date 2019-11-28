@@ -21,7 +21,7 @@ const Navigation = ({ colorTheme, lightenColor, click }) => {
           <NavLink
             to="/Kalkulator-wydatkow-React/o-aplikacji"
             activeClassName="activeItemNav"
-            activeStyle={{ backgroundColor: `${lightenColor}` }}
+            activeStyle={{ backgroundColor: `${lightenColor}`, color: "#000" }}
             onClick={handleClickItemMobile}
           >
             O aplikacji
@@ -32,7 +32,7 @@ const Navigation = ({ colorTheme, lightenColor, click }) => {
             exact
             to="/Kalkulator-wydatkow-React/"
             activeClassName="activeItemNav"
-            activeStyle={{ backgroundColor: `${lightenColor}` }}
+            activeStyle={{ backgroundColor: `${lightenColor}`, color: "#000" }}
             onClick={handleClickItemMobile}
           >
             Kalkulator wydatków
@@ -43,7 +43,7 @@ const Navigation = ({ colorTheme, lightenColor, click }) => {
             to="/Kalkulator-wydatkow-React/ocena"
             activeClassName="activeItemNav"
             activeStyle={{ color: `${colorTheme}` }}
-            activeStyle={{ backgroundColor: `${lightenColor}` }}
+            activeStyle={{ backgroundColor: `${lightenColor}`, color: "#000" }}
             onClick={handleClickItemMobile}
           >
             Oceń aplikację
@@ -54,7 +54,7 @@ const Navigation = ({ colorTheme, lightenColor, click }) => {
             to="/Kalkulator-wydatkow-React/ustawienia"
             activeClassName="activeItemNav"
             activeStyle={{ color: `${colorTheme}` }}
-            activeStyle={{ backgroundColor: `${lightenColor}` }}
+            activeStyle={{ backgroundColor: `${lightenColor}`, color: "#000" }}
             onClick={handleClickItemMobile}
           >
             Ustawienia
@@ -65,7 +65,7 @@ const Navigation = ({ colorTheme, lightenColor, click }) => {
             to="/Kalkulator-wydatkow-React/kontakt"
             activeClassName="activeItemNav"
             activeStyle={{ color: `${colorTheme}` }}
-            activeStyle={{ backgroundColor: `${lightenColor}` }}
+            activeStyle={{ backgroundColor: `${lightenColor}`, color: "#000" }}
             onClick={handleClickItemMobile}
           >
             Kontakt

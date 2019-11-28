@@ -7,14 +7,7 @@
   color: lightgray;
   cursor: pointer;
 }
-.rating-button {
-  margin-top: 2rem;
-  border: none;
-  width: 120px;
-  height: 52px;
-  color: white;
-  text-transform: uppercase;
-}
+
 .rating-msg {
   padding-top: 1rem;
 }

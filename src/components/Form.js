@@ -8,8 +8,12 @@ const Form = ({
   click,
   categories,
   select,
-  background
+  background,
+  allCategories
 }) => {
+  const options = allCategories.map(item => (
+    <option value={item}>{item}</option>
+  ));
   return (
     <form action="" className="form">
       <div className="form__field">
@@ -40,11 +44,7 @@ const Form = ({
           value={categories}
           onChange={select}
         >
-          <option value="Żywność">Żywność</option>
-          <option value="Opłaty">Opłaty</option>
-          <option value="Jedzenie na mieście">Jedzenie na mieście</option>
-          <option value="Kredyt">Kredyt</option>
-          <option value="Inna">Inna</option>
+          {options}
         </select>
       </div>
       <button

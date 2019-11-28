@@ -116,7 +116,7 @@ class Calculator extends Component {
       .reduce((prevVal, currentVal) => prevVal + currentVal, 0)
       .toFixed(2);
 
-    const { colorTheme, lightenColor } = this.props;
+    const { colorTheme, lightenColor, allCategories } = this.props;
 
     return (
       <>
@@ -130,6 +130,7 @@ class Calculator extends Component {
             categories={this.state.categories}
             select={this.handleChangeSelect}
             background={colorTheme}
+            allCategories={allCategories}
           />
           <div className="sticky__wrapper">
             {

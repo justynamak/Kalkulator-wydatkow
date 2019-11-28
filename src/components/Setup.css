@@ -30,3 +30,40 @@
   background: #ae0057;
   color: #ae0057;
 }
+.categories-container {
+  display: flex;
+  align-items: flex-end;
+}
+.categories button {
+  margin-top: 0;
+  height: 40px;
+}
+.categories {
+  margin-top: 2rem;
+}
+.categories input {
+  min-width: 30%;
+  border-bottom: 1px solid #000;
+  padding: 0.5em;
+  text-align: center;
+  font-size: 1.1rem;
+  margin-right: 1rem;
+  height: 2.5rem;
+}
+.categories-setup {
+  list-style-type: none;
+  display: flex;
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.categories-setup li {
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+  background: lightgray;
+}
+.categorie-remove {
+  font-weight: bold;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}

@@ -28,6 +28,8 @@ input:focus {
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   margin-left: 1em;
+  min-width: 10rem;
+  font-size: 1rem;
 }
 
 @media all and (max-width: 1025px) {

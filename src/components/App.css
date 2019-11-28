@@ -97,7 +97,14 @@ button {
   min-width: 2.5em;
   border-radius: 3px;
 }
-
+.btn {
+  margin-top: 2rem;
+  border: none;
+  width: 120px;
+  height: 52px;
+  color: white;
+  text-transform: uppercase;
+}
 .sticky__wrapper {
   display: flex;
   justify-content: space-between;
