@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Kalkulator-wydatkow-React/static/css/main.599d8574.chunk.css",
-    "main.js": "/Kalkulator-wydatkow-React/static/js/main.c40909c3.chunk.js",
-    "main.js.map": "/Kalkulator-wydatkow-React/static/js/main.c40909c3.chunk.js.map",
+    "main.css": "/Kalkulator-wydatkow-React/static/css/main.38f21487.chunk.css",
+    "main.js": "/Kalkulator-wydatkow-React/static/js/main.1315244b.chunk.js",
+    "main.js.map": "/Kalkulator-wydatkow-React/static/js/main.1315244b.chunk.js.map",
     "runtime~main.js": "/Kalkulator-wydatkow-React/static/js/runtime~main.4b5cb6d2.js",
     "runtime~main.js.map": "/Kalkulator-wydatkow-React/static/js/runtime~main.4b5cb6d2.js.map",
     "static/css/2.391da5e4.chunk.css": "/Kalkulator-wydatkow-React/static/css/2.391da5e4.chunk.css",
     "static/js/2.95b6551d.chunk.js": "/Kalkulator-wydatkow-React/static/js/2.95b6551d.chunk.js",
     "static/js/2.95b6551d.chunk.js.map": "/Kalkulator-wydatkow-React/static/js/2.95b6551d.chunk.js.map",
     "index.html": "/Kalkulator-wydatkow-React/index.html",
-    "precache-manifest.388530fea681eddd1ce96b56ad32c3bb.js": "/Kalkulator-wydatkow-React/precache-manifest.388530fea681eddd1ce96b56ad32c3bb.js",
+    "precache-manifest.849d135cc29ba61496bca9425eefe8a4.js": "/Kalkulator-wydatkow-React/precache-manifest.849d135cc29ba61496bca9425eefe8a4.js",
     "service-worker.js": "/Kalkulator-wydatkow-React/service-worker.js",
     "static/css/2.391da5e4.chunk.css.map": "/Kalkulator-wydatkow-React/static/css/2.391da5e4.chunk.css.map",
-    "static/css/main.599d8574.chunk.css.map": "/Kalkulator-wydatkow-React/static/css/main.599d8574.chunk.css.map",
+    "static/css/main.38f21487.chunk.css.map": "/Kalkulator-wydatkow-React/static/css/main.38f21487.chunk.css.map",
     "static/media/all.min.css": "/Kalkulator-wydatkow-React/static/media/fa-solid-900.c2801fb4.svg"
   }
 }
