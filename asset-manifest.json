@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Kalkulator-wydatkow-React/static/css/main.38f21487.chunk.css",
-    "main.js": "/Kalkulator-wydatkow-React/static/js/main.d523ba2d.chunk.js",
-    "main.js.map": "/Kalkulator-wydatkow-React/static/js/main.d523ba2d.chunk.js.map",
+    "main.css": "/Kalkulator-wydatkow-React/static/css/main.f7f36153.chunk.css",
+    "main.js": "/Kalkulator-wydatkow-React/static/js/main.b714eae7.chunk.js",
+    "main.js.map": "/Kalkulator-wydatkow-React/static/js/main.b714eae7.chunk.js.map",
     "runtime~main.js": "/Kalkulator-wydatkow-React/static/js/runtime~main.4b5cb6d2.js",
     "runtime~main.js.map": "/Kalkulator-wydatkow-React/static/js/runtime~main.4b5cb6d2.js.map",
     "static/css/2.391da5e4.chunk.css": "/Kalkulator-wydatkow-React/static/css/2.391da5e4.chunk.css",
-    "static/js/2.95b6551d.chunk.js": "/Kalkulator-wydatkow-React/static/js/2.95b6551d.chunk.js",
-    "static/js/2.95b6551d.chunk.js.map": "/Kalkulator-wydatkow-React/static/js/2.95b6551d.chunk.js.map",
+    "static/js/2.1239270b.chunk.js": "/Kalkulator-wydatkow-React/static/js/2.1239270b.chunk.js",
+    "static/js/2.1239270b.chunk.js.map": "/Kalkulator-wydatkow-React/static/js/2.1239270b.chunk.js.map",
     "index.html": "/Kalkulator-wydatkow-React/index.html",
-    "precache-manifest.da46231e144c03c9027282c6c3788b57.js": "/Kalkulator-wydatkow-React/precache-manifest.da46231e144c03c9027282c6c3788b57.js",
+    "precache-manifest.e3b9f0e63d0d0a0f0028e1eaff4f96fb.js": "/Kalkulator-wydatkow-React/precache-manifest.e3b9f0e63d0d0a0f0028e1eaff4f96fb.js",
     "service-worker.js": "/Kalkulator-wydatkow-React/service-worker.js",
     "static/css/2.391da5e4.chunk.css.map": "/Kalkulator-wydatkow-React/static/css/2.391da5e4.chunk.css.map",
-    "static/css/main.38f21487.chunk.css.map": "/Kalkulator-wydatkow-React/static/css/main.38f21487.chunk.css.map",
+    "static/css/main.f7f36153.chunk.css.map": "/Kalkulator-wydatkow-React/static/css/main.f7f36153.chunk.css.map",
     "static/media/all.min.css": "/Kalkulator-wydatkow-React/static/media/fa-solid-900.c2801fb4.svg"
   }
 }
