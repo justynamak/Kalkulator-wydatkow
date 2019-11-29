@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import "./Rating.css";
+import { saveToStorage } from "../utils";
+import { getFromStorage } from "../utils";
 
 class Rating extends Component {
   state = {
     active: "",
     msg: ""
   };
-  saveToLocalStorage(rating) {
-    localStorage.setItem("rating", rating);
-  }
+
   handleClick = e => {
     if (!this.state.msg) {
       this.setState({
@@ -22,10 +22,10 @@ class Rating extends Component {
         msg: "Dziękuję za oddanie głosu"
       });
     }
-    this.saveToLocalStorage(this.state.active);
+    saveToStorage("rating", this.state.active);
   };
   componentDidMount() {
-    const active = localStorage.getItem("rating");
+    const active = getFromStorage("rating");
     if (active) {
       this.setState({
         active,

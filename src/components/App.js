@@ -6,6 +6,8 @@ import Navigation from "./Navigation";
 import About from "./About";
 import Setup from "./Setup";
 import Rating from "./Rating";
+import { saveToStorage } from "../utils";
+import { getFromStorage } from "../utils";
 
 class App extends Component {
   state = {
@@ -42,9 +44,7 @@ class App extends Component {
 
     return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16);
   }
-  saveThemeToStorage = color => {
-    localStorage.setItem("colorTheme", color);
-  };
+
   handleToggleNav = () => {
     this.setState({
       showNav: !this.state.showNav
@@ -61,7 +61,7 @@ class App extends Component {
     this.setState({
       colorTheme: color
     });
-    this.saveThemeToStorage(color);
+    saveToStorage("colorTheme", color);
   };
   handleRemoveFromCategories = elem => {
     if (this.state.allCategories.length > 2) {
@@ -71,6 +71,7 @@ class App extends Component {
       this.setState({
         allCategories
       });
+      saveToStorage("categories", JSON.stringify(allCategories));
     } else {
       this.setState({
         errMsgCategories:
@@ -88,6 +89,7 @@ class App extends Component {
         newCategory: "",
         errMsgCategories: ""
       });
+      saveToStorage("categories", JSON.stringify(allCategories));
     }
   };
   handleChangeInput = e => {
@@ -99,11 +101,16 @@ class App extends Component {
   };
 
   componentDidMount() {
-    if (localStorage.getItem("colorTheme")) {
-      const colorTheme = localStorage.getItem("colorTheme");
-
+    const colorTheme = getFromStorage("colorTheme");
+    const allCategories = getFromStorage("categories");
+    if (colorTheme) {
       this.setState({
         colorTheme
+      });
+    }
+    if (allCategories) {
+      this.setState({
+        allCategories: JSON.parse(allCategories)
       });
     }
   }
