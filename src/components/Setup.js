@@ -20,7 +20,7 @@ const Setup = ({
   return (
     <>
       <h2>Ustawienia</h2>
-      <section>
+      <section className="setup-color">
         <h3>Wybierz kolor motywu</h3>
         <div className="colors-wrapper">
           <div
@@ -85,7 +85,9 @@ const Setup = ({
           </button>
         </div>
         <ul className="categories-setup">{categories}</ul>
-        {errMsgCategories ? <p>errMsgCategories</p> : null}
+        {errMsgCategories ? (
+          <p style={{ color: "red" }}>{errMsgCategories}</p>
+        ) : null}
       </section>
     </>
   );

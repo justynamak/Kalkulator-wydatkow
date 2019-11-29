@@ -1,3 +1,5 @@
+export const API = "http://jsonplaceholder.typicode.com/users";
+
 export function saveToStorage(name, val) {
   localStorage.setItem(name, val);
 }

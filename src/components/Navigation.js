@@ -49,6 +49,18 @@ const Navigation = ({ colorTheme, lightenColor, click }) => {
             Oceń aplikację
           </NavLink>
         </li>
+
+        <li>
+          <NavLink
+            to="/Kalkulator-wydatkow-React/opinie"
+            activeClassName="activeItemNav"
+            activeStyle={{ color: `${colorTheme}` }}
+            activeStyle={{ backgroundColor: `${lightenColor}`, color: "#000" }}
+            onClick={handleClickItemMobile}
+          >
+            Opinie
+          </NavLink>
+        </li>
         <li>
           <NavLink
             to="/Kalkulator-wydatkow-React/ustawienia"
@@ -58,17 +70,6 @@ const Navigation = ({ colorTheme, lightenColor, click }) => {
             onClick={handleClickItemMobile}
           >
             Ustawienia
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/Kalkulator-wydatkow-React/kontakt"
-            activeClassName="activeItemNav"
-            activeStyle={{ color: `${colorTheme}` }}
-            activeStyle={{ backgroundColor: `${lightenColor}`, color: "#000" }}
-            onClick={handleClickItemMobile}
-          >
-            Kontakt
           </NavLink>
         </li>
       </ul>

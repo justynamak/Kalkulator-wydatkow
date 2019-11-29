@@ -1,3 +1,10 @@
+.setup-color,
+.categories {
+  padding: 1.4rem 0;
+}
+.setup-color {
+  border-bottom: 1px solid lightgray;
+}
 .colors-wrapper {
   margin-top: 2rem;
   display: flex;
@@ -37,9 +44,7 @@
 .categories button {
   margin-top: 0;
 }
-.categories {
-  margin-top: 2rem;
-}
+
 .categories input {
   min-width: 30%;
   border-bottom: 1px solid #000;

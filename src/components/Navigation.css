@@ -1,5 +1,7 @@
 .nav {
   width: 20%;
+  min-height: 100vh;
+  height: auto;
 }
 .nav ul {
   width: 100%;
@@ -7,7 +9,7 @@
   margin: 0;
   background: #ececec;
   width: auto;
-  height: 100vh;
+  height: 100%;
   z-index: 1000;
   box-shadow: 1px 1px 10px lightgrey;
   padding-top: calc(60px + 2%);

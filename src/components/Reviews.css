@@ -1,0 +1,14 @@
+.reviews ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.reviews li {
+  padding: 2rem 0;
+}
+.user-text {
+  font-style: italic;
+}
+.reviews p {
+  font-weight: bold;
+}

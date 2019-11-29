@@ -8,6 +8,7 @@ import Setup from "./Setup";
 import Rating from "./Rating";
 import { saveToStorage } from "../utils";
 import { getFromStorage } from "../utils";
+import Reviews from "./Reviews";
 
 class App extends Component {
   state = {
@@ -80,16 +81,30 @@ class App extends Component {
     }
   };
   handleAddToCategories = () => {
-    if (this.state.newCategory.length > 0) {
+    const { newCategory, allCategories } = this.state;
+    if (newCategory.length > 0 && allCategories.length <= 15) {
       const allCategories = [...this.state.allCategories];
-      allCategories.push(this.state.newCategory);
+      const isTheSameCategory = allCategories.find(
+        elem => elem === newCategory
+      );
+      if (!isTheSameCategory) {
+        allCategories.push(newCategory);
 
+        this.setState({
+          allCategories,
+          newCategory: "",
+          errMsgCategories: ""
+        });
+        saveToStorage("categories", JSON.stringify(allCategories));
+      } else {
+        this.setState({
+          errMsgCategories: "Taka kategoria została już dodana"
+        });
+      }
+    } else if (allCategories.length > 15) {
       this.setState({
-        allCategories,
-        newCategory: "",
-        errMsgCategories: ""
+        errMsgCategories: "Możesz dodać maksymalnie 15 kategorii"
       });
-      saveToStorage("categories", JSON.stringify(allCategories));
     }
   };
   handleChangeInput = e => {
@@ -169,6 +184,10 @@ class App extends Component {
               <Route
                 path="/Kalkulator-wydatkow-React/ocena"
                 render={() => <Rating colorTheme={this.state.colorTheme} />}
+              />
+              <Route
+                path="/Kalkulator-wydatkow-React/opinie"
+                component={Reviews}
               />
             </Switch>
           </div>
