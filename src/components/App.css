@@ -60,8 +60,6 @@ input {
   justify-content: space-between;
   align-items: baseline;
   flex: 1;
-  /* box-shadow: -6px 2px 8px 0px #ccc; */
-  border-bottom: 1px solid lightgrey;
   padding-bottom: 25px;
   flex-direction: row;
 }
@@ -73,7 +71,8 @@ input {
 }
 .panel {
   position: relative;
-  margin-top: 2em;
+  text-align: center;
+  padding: 1rem 0;
 }
 h1 {
   font-size: 1.5em;

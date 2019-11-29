@@ -16,7 +16,7 @@ const Setup = ({
       {category} <span className="categorie-remove">x</span>
     </li>
   ));
-  console.log(change);
+
   return (
     <>
       <h2>Ustawienia</h2>
@@ -74,7 +74,7 @@ const Setup = ({
             placeholder="wpisz nazwę kategorii"
             value={newCategory}
             onChange={change}
-            maxlength="20"
+            maxLength="20"
           />
           <button
             className="btn"
@@ -85,7 +85,7 @@ const Setup = ({
           </button>
         </div>
         <ul className="categories-setup">{categories}</ul>
-        <p>{errMsgCategories}</p>
+        {errMsgCategories ? <p>errMsgCategories</p> : null}
       </section>
     </>
   );

@@ -100,10 +100,12 @@ class Calculator extends Component {
   componentDidMount() {
     if (localStorage.getItem("expenses")) {
       const allExpenses = JSON.parse(localStorage.getItem("expenses"));
-      this.setState({
-        allExpenses,
-        isActivePanel: true
-      });
+      if (allExpenses.length) {
+        this.setState({
+          allExpenses,
+          isActivePanel: true
+        });
+      }
     }
   }
   componentDidUpdate() {

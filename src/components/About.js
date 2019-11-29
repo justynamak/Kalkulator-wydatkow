@@ -6,7 +6,7 @@ const About = () => {
     <>
       <h2>O aplikacji</h2>
       <div className="about-wrapper">
-        <i class="fas fa-rocket fa-5x"></i>
+        <i className="fas fa-rocket fa-5x"></i>
         <p>
           Projekt stworzony w oparciu o bibliotekę React i środowisko
           create-react-app. Aplikacja umożliwia dodawanie i usuwanie wydatków.

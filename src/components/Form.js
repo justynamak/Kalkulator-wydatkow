@@ -12,7 +12,9 @@ const Form = ({
   allCategories
 }) => {
   const options = allCategories.map(item => (
-    <option value={item}>{item}</option>
+    <option key={item} value={item}>
+      {item}
+    </option>
   ));
   return (
     <form action="" className="form">

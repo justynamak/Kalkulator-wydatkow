@@ -9,7 +9,7 @@ const ButtonRemoveAll = ({ click, color }) => {
       style={{ color: `${color}` }}
       title="Usuń wszystkie"
     >
-      <i class="fas fa-trash"></i>
+      <i className="fas fa-trash"></i>
     </button>
   );
 };
