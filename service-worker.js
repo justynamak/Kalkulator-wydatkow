@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Kalkulator-wydatkow-React/precache-manifest.f10ae1ffb733c635b21f632230ca1d77.js"
+  "/Kalkulator-wydatkow-React/precache-manifest.653fd851f95e02d381b60815281f8bb5.js"
 );
 
 self.addEventListener('message', (event) => {
