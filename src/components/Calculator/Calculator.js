@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-import "./App.css";
-import Form from "./Form";
-import ListItems from "./ListItems";
-import ButtonRemoveAll from "./ButtonRemoveAll";
+import { fbase } from "../../fbase";
+import "../App.css";
+import Form from "../Forms/Form";
+import ListItems from "../ListItems/ListItems";
+import ButtonRemoveAll from "../ButtonRemoveAll/ButtonRemoveAll";
 
 class Calculator extends Component {
   state = {
     title: "",
     price: "",
-    isActivePanel: false,
     allExpenses: [],
+    expense: {},
     category: "Żywność"
   };
 
@@ -47,30 +48,24 @@ class Calculator extends Component {
   };
   handleClickButton = e => {
     e.preventDefault();
-    if (this.state.price > 0 && this.state.title) {
+    const { allExpenses, title, category, price } = this.state;
+    if (price > 0 && title) {
       let idExpense;
       if (this.state.allExpenses.length) {
-        const allId = this.state.allExpenses.map(expense => expense.id);
-        idExpense = allId[allId.length - 1] + 1;
+        idExpense = this.createExpenseId(allExpenses);
       } else {
-        idExpense = this.state.allExpenses.length + 1;
+        idExpense = 1;
       }
-      const date = new Date().toLocaleString();
+      const date = this.getCurrentDate();
 
       const expense = {
         id: idExpense,
-        title: this.state.title,
-        price: this.state.price,
-        category: this.state.category,
+        title,
+        price,
+        category,
         currentDate: date
       };
-      const allExpenses = [...this.state.allExpenses, expense];
-      this.setState(prevState => ({
-        allExpenses,
-        title: "",
-        price: "",
-        isActivePanel: true
-      }));
+      this.addExpense(expense);
     }
   };
   handleChangeSelect = e => {
@@ -80,45 +75,55 @@ class Calculator extends Component {
   };
   handleClickButtonRemove = e => {
     const element = parseFloat(e.target.parentElement.dataset.id);
+
     const allExpenses = this.state.allExpenses.filter(el => el.id !== element);
-    if (!allExpenses.length) {
-      this.setState({
-        isActivePanel: false
-      });
-    }
+
     this.setState({
       allExpenses
     });
   };
   handleClickButtonRemoveAll = () => {
     this.setState({
-      allExpenses: [],
-      isActivePanel: false
+      allExpenses: []
     });
   };
 
   componentDidMount() {
-    if (localStorage.getItem("expenses")) {
-      const allExpenses = JSON.parse(localStorage.getItem("expenses"));
-      if (allExpenses.length) {
-        this.setState({
-          allExpenses,
-          isActivePanel: true
-        });
-      }
-    }
+    this.ref = fbase.syncState("kalkulator-wydatkow/wydatki", {
+      context: this,
+      state: "allExpenses"
+    });
   }
-  componentDidUpdate() {
-    const allExpenses = JSON.stringify(this.state.allExpenses);
-    localStorage.setItem("expenses", allExpenses);
+  componentWillUnmount() {
+    fbase.removeBinding(this.ref);
+  }
+
+  createExpenseId(expenses) {
+    return expenses[expenses.length - 1].id + 1;
+  }
+  getCurrentDate() {
+    return new Date().toLocaleString();
+  }
+  addExpense(expense) {
+    const allExpenses = Array.isArray(this.state.allExpenses)
+      ? [...this.state.allExpenses, expense]
+      : [expense];
+
+    this.setState(prevState => ({
+      allExpenses,
+      title: "",
+      price: ""
+    }));
   }
   render() {
-    const theSumOfExpenses = this.state.allExpenses
-      .map(expense => expense.price !== "" && expense.price)
-      .reduce((prevVal, currentVal) => prevVal + currentVal, 0)
-      .toFixed(2);
-
+    const { allExpenses, title, category, price } = this.state;
     const { colorTheme, lightenColor, allCategories } = this.props;
+    const theSumOfExpenses = allExpenses.length
+      ? allExpenses
+          .map(expense => expense.price !== "" && expense.price)
+          .reduce((prevVal, currentVal) => prevVal + currentVal, 0)
+          .toFixed(2)
+      : 0;
 
     return (
       <>
@@ -126,10 +131,10 @@ class Calculator extends Component {
           <h1>Kalkulator wydatków</h1>
           <Form
             change={this.handleChangeInput}
-            title={this.state.title}
-            price={this.state.price}
+            title={title}
+            price={price}
             click={this.handleClickButton}
-            categories={this.state.categories}
+            categories={category}
             select={this.handleChangeSelect}
             background={colorTheme}
             allCategories={allCategories}
@@ -145,7 +150,7 @@ class Calculator extends Component {
                 Razem: {theSumOfExpenses} zł
               </p>
             }
-            {this.state.allExpenses.length > 0 && (
+            {allExpenses.length > 0 && (
               <ButtonRemoveAll
                 click={this.handleClickButtonRemoveAll}
                 color={colorTheme}
@@ -165,9 +170,9 @@ class Calculator extends Component {
             <div></div>
           </div>
 
-          {this.state.isActivePanel ? (
+          {allExpenses.length ? (
             <ListItems
-              allExpenses={this.state.allExpenses}
+              allExpenses={allExpenses}
               click={this.handleClickButtonRemove}
               change={this.handleEditChangeInput}
               color={colorTheme}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navigation.css";
-import "../../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Navigation = ({ colorTheme, lightenColor, click }) => {
   function handleClickItemMobile() {

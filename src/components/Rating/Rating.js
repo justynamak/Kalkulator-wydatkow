@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Rating.css";
-import { saveToStorage } from "../utils";
-import { getFromStorage } from "../utils";
+import { saveToStorage } from "../../utils";
+import { getFromStorage } from "../../utils";
 
 class Rating extends Component {
   state = {

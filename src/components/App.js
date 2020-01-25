@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Calculator from "./Calculator";
-import Navigation from "./Navigation";
-import About from "./About";
-import Setup from "./Setup";
-import Rating from "./Rating";
+import Calculator from "./Calculator/Calculator";
+import Navigation from "./Navigation/Navigation";
+import About from "./About/About";
+import Setup from "./Setup/Setup";
+import Rating from "./Rating/Rating";
 import { saveToStorage } from "../utils";
 import { getFromStorage } from "../utils";
-import Reviews from "./Reviews";
+import Reviews from "./Reviews/Reviews";
 
 class App extends Component {
   state = {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { API } from "../utils";
+import { API } from "../../utils";
 import "./Reviews.css";
 
 class Reviews extends Component {
